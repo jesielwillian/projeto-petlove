@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Serviços | PetLove — banho, tosa, veterinário e clube</title>
+  <meta name="description"
+    content="Agende banho, tosa e consulta online com horários em tempo real. Conheça o Clube PetLove+.">
+  <meta property="og:title" content="Serviços | PetLove — banho, tosa, veterinário e clube">
+  <meta property="og:description"
+    content="Agende banho, tosa e consulta online com horários em tempo real. Conheça o Clube PetLove+.">
+  <meta name="theme-color" content="#070b14">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/app.js"></script>
+  <script defer src="js/backend.js"></script>
+</head>
+
+<body data-page="servicos">
+  <!-- conteúdo principal: servicos -->
+  <main>
+    <div class="page-head">
+      <div class="container">
+        <div class="crumbs"><a href="index.html">início</a> / serviços</div><span class="eyebrow">SERVIÇOS</span>
+        <h1>Cuidado <span class="grad-text">agendado em segundos</span></h1>
+      </div>
+    </div>
+    <!-- seção 01: banho & tosa -->
+    <section class="section">
+      <div class="container g3 grid">
+        <div class="card reveal"><img src="assets/images/servicos-01.webp" alt=""
+            style="border-radius:12px;aspect-ratio:16/10;object-fit:cover;margin-bottom:1rem">
+          <h3>Banho & Tosa</h3>
+          <p>Produtos hipoalergênicos, secagem silenciosa e câmera ao vivo para você acompanhar.</p>
+          <div class="price" style="margin:1rem 0"><strong>a partir de R$ 59</strong></div><button
+            class="btn btn-primary" data-svc="Banho & Tosa">Agendar</button>
+        </div>
+        <div class="card reveal"><img src="assets/images/servicos-02.webp" alt=""
+            style="border-radius:12px;aspect-ratio:16/10;object-fit:cover;margin-bottom:1rem">
+          <h3>Consulta veterinária</h3>
+          <p>Clínico geral, vacinas e check-up com prontuário digital do seu pet.</p>
+          <div class="price" style="margin:1rem 0"><strong>a partir de R$ 120</strong></div><button
+            class="btn btn-primary" data-svc="Consulta veterinária">Agendar</button>
+        </div>
+        <div class="card reveal"><img src="assets/images/servicos-03.webp" alt=""
+            style="border-radius:12px;aspect-ratio:16/10;object-fit:cover;margin-bottom:1rem">
+          <h3>Day care</h3>
+          <p>Diária com recreação monitorada e relatório com fotos no fim do dia.</p>
+          <div class="price" style="margin:1rem 0"><strong>a partir de R$ 89</strong></div><button
+            class="btn btn-primary" data-svc="Day care">Agendar</button>
+        </div>
+      </div>
+    </section>
+    <!-- seção 02: agenda online -->
+    <section class="section" id="agendar" style="background:var(--bg-2);border-block:1px solid var(--line)">
+      <div class="container g2 grid" style="gap:3rem">
+        <div><span class="eyebrow">AGENDA ONLINE</span>
+          <h2 style="margin:.6rem 0">Escolha o dia, <span class="grad-text">a gente cuida do resto</span></h2>
+          <p style="color:var(--muted)">Horários atualizados em tempo real. Você recebe confirmação e lembrete pelo
+            WhatsApp.</p>
+          <div id="book-result" style="margin-top:2rem"></div>
+        </div>
+        <form class="card" id="book-form">
+          <div class="form-grid">
+            <label class="field">Seu nome<input class="input" name="name" required autocomplete="name"></label>
+            <label class="field">E-mail<input class="input" type="email" name="email" required
+                autocomplete="email"></label>
+            <label class="field full">Serviço<select class="input" name="service">
+                <option>Banho & Tosa</option>
+                <option>Consulta veterinária</option>
+                <option>Day care</option>
+              </select></label>
+            <label class="field">Nome do pet<input class="input" name="pet" autocomplete="off" required></label>
+            <label class="field">Porte<select class="input" name="size">
+                <option>Pequeno</option>
+                <option>Médio</option>
+                <option>Grande</option>
+              </select></label>
+            <label class="field">Seu WhatsApp<input class="input" type="tel" name="phone" inputmode="numeric"
+                autocomplete="tel" placeholder="(11) 99999-9999" maxlength="15" required></label>
+            <label class="field">Data<input class="input" type="text" name="date" inputmode="numeric" autocomplete="off" placeholder="DD/MM/AAAA" maxlength="10" pattern="\d{2}/\d{2}/\d{4}" aria-label="Data do agendamento no formato dia, mês e ano" required></label>
+            <div class="full"><span class="field">Horários disponíveis</span>
+              <div id="slots" style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem;min-height:36px"><small
+                  style="color:var(--muted)">Escolha uma data</small></div>
+            </div>
+          </div>
+          <button class="btn btn-block btn-primary" style="margin-top:1.4rem"><i class="fa-calendar-check fa-solid"></i>
+            Confirmar agendamento</button>
+        </form>
+      </div>
+    </section>
+    <!-- seção 03: clube petlove+ -->
+    <section class="section" id="clube">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow">CLUBE PETLOVE+</span>
+            <h2>Assinatura que <span class="grad-text">se paga sozinha</span></h2>
+          </div>
+        </div>
+        <div class="g3 grid">
+          <div class="card reveal"><span class="mono" style="color:var(--muted)">BASIC</span>
+            <div class="big-num">R$ 19<small style="font-size:1rem;color:var(--muted)">/mês</small></div>
+            <ul style="list-style:none;color:var(--muted);display:grid;gap:.5rem;margin:1rem 0">
+              <li>✓ Frete grátis ilimitado</li>
+              <li>✓ 5% off em tudo</li>
+              <li>✓ PetBot prioritário</li>
+            </ul><button class="btn btn-block" data-plan="Basic">Assinar</button>
+          </div>
+          <div class="card reveal" style="border-color:var(--primary);box-shadow:var(--glow)"><span class="p-tag"
+              style="position:static;display:inline-block">MAIS POPULAR</span>
+            <div class="mono" style="color:var(--primary);margin-top:.6rem">PRO</div>
+            <div class="big-num">R$ 49<small style="font-size:1rem;color:var(--muted)">/mês</small></div>
+            <ul style="list-style:none;color:var(--muted);display:grid;gap:.5rem;margin:1rem 0">
+              <li>✓ Tudo do Basic</li>
+              <li>✓ 1 banho grátis por mês</li>
+              <li>✓ 10% off em tudo</li>
+              <li>✓ Reposição automática</li>
+            </ul><button class="btn btn-block btn-primary" data-plan="Pro">Assinar</button>
+          </div>
+          <div class="card reveal"><span class="mono" style="color:var(--muted)">ULTRA</span>
+            <div class="big-num">R$ 99<small style="font-size:1rem;color:var(--muted)">/mês</small></div>
+            <ul style="list-style:none;color:var(--muted);display:grid;gap:.5rem;margin:1rem 0">
+              <li>✓ Tudo do Pro</li>
+              <li>✓ 2 banhos + 1 consulta/mês</li>
+              <li>✓ 15% off em tudo</li>
+              <li>✓ Telemedicina 24h</li>
+            </ul><button class="btn btn-block" data-plan="Ultra">Assinar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>

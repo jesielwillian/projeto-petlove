@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Seu carrinho | PetLove</title>
+  <meta name="description" content="Revise seus produtos, aplique cupons e calcule o frete.">
+  <meta property="og:title" content="Seu carrinho | PetLove">
+  <meta property="og:description" content="Revise seus produtos, aplique cupons e calcule o frete.">
+  <meta name="theme-color" content="#070b14">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/app.js"></script>
+  <script defer src="js/backend.js"></script>
+</head>
+
+<body data-page="carrinho">
+  <!-- conteúdo principal: carrinho -->
+  <main>
+    <div class="page-head">
+      <div class="container">
+        <div class="crumbs"><a href="index.html">início</a> / carrinho</div><span class="eyebrow">SACOLA</span>
+        <h1>Seu <span class="grad-text">carrinho</span></h1>
+      </div>
+    </div>
+    <div class="container">
+      <div class="cart-layout">
+        <div id="cart-list"></div>
+        <aside class="card summary" id="summary">
+          <h3 style="margin-bottom:1rem">Resumo</h3>
+          <div id="ship-progress"></div>
+          <form id="coupon-form" class="inline-form" style="margin-top:1rem"><input class="input"
+              placeholder="Cupom de desconto"><button class="btn">Aplicar</button></form>
+          <div id="coupon-msg" style="margin:.5rem 0 1rem;font-size:.85rem"></div>
+          <div class="inline-form"><input class="input" id="cep" placeholder="CEP"><button class="btn"
+              id="cep-btn">Frete</button></div>
+          <div id="cep-r" style="margin:.6rem 0;font-size:.85rem;color:var(--muted)"></div>
+          <div id="sum-rows"></div>
+          <a href="checkout.html" class="btn btn-block btn-primary" style="margin-top:1rem"><i
+              class="fa-lock fa-solid"></i> Finalizar compra</a>
+          <a href="produtos.html" class="btn btn-block btn-ghost" style="margin-top:.5rem">Continuar comprando</a>
+          <p style="text-align:center;margin-top:1rem;color:var(--muted);font-size:.8rem"><i
+              class="fa-shield-halved fa-solid"></i> Pagamento 100% seguro</p>
+        </aside>
+      </div>
+      <!-- seção 01: aproveite -->
+      <section class="section" style="padding-top:20px">
+        <div class="section-head">
+          <div><span class="eyebrow">APROVEITE</span>
+            <h2>Leve <span class="grad-text">também</span></h2>
+          </div>
+        </div>
+        <div class="g4 grid" id="upsell"></div>
+      </section>
+    </div>
+  </main>
+</body>
+
+</html>

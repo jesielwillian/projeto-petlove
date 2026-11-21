@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Finalizar compra | PetLove</title>
+  <meta name="description" content="Checkout seguro em 3 etapas com PIX, cartão ou boleto.">
+  <meta property="og:title" content="Finalizar compra | PetLove">
+  <meta property="og:description" content="Checkout seguro em 3 etapas com PIX, cartão ou boleto.">
+  <meta name="theme-color" content="#070b14">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/app.js"></script>
+  <script defer src="js/backend.js"></script>
+</head>
+
+<body data-page="checkout">
+  <!-- conteúdo principal: checkout -->
+  <main class="container checkout-page" style="padding:50px 0"><span class="eyebrow"><i class="fa-lock fa-solid"></i>
+      CHECKOUT
+      SEGURO</span>
+    <h1 style="font-size:clamp(2rem,4vw,3rem);margin:.4rem 0 2rem">Quase <span class="grad-text">lá!</span></h1>
+    <div class="steps">
+      <div class="active step">01 · DADOS</div>
+      <div class="step">02 · ENTREGA</div>
+      <div class="step">03 · PAGAMENTO</div>
+    </div>
+    <div class="cart-layout" style="padding:0">
+      <div id="co-main">
+        <form id="co-form" onsubmit="return false">
+          <div class="active card pane">
+            <h3 style="margin-bottom:1rem">Seus dados</h3>
+            <div class="form-grid">
+              <label class="field full">Nome completo<input class="input" name="name" required
+                  autocomplete="name"></label>
+              <label class="field">E-mail<input class="input" name="email" type="email" required
+                  pattern="[^@\s]+@[^@\s]+\.[^@\s]+"></label>
+              <label class="field">Celular<input class="input" name="phone" type="tel" autocomplete="tel" required
+                  placeholder="(11) 99999-9999"></label>
+              <label class="field">CPF<input class="input" name="cpf" autocomplete="off" required
+                  pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00"></label>
+              <label class="field">Nome do pet (opcional)<input class="input" name="pet" autocomplete="off"
+                  placeholder="Ex: Mingau"></label>
+            </div>
+            <button type="button" class="btn btn-primary" style="margin-top:1.4rem" data-next>Continuar <i
+                class="fa-arrow-right fa-solid"></i></button>
+          </div>
+          <div class="card pane">
+            <h3 style="margin-bottom:1rem">Endereço de entrega</h3>
+            <div class="form-grid">
+              <label class="field">CEP<input class="input" name="cep" autocomplete="postal-code" required
+                  pattern="\d{5}-\d{3}" placeholder="00000-000"></label>
+              <label class="field">Número<input class="input" name="number" autocomplete="address-line2"
+                  required></label>
+              <label class="field full">Rua<input class="input" name="street" autocomplete="address-line1"
+                  required></label>
+              <label class="field">Bairro<input class="input" name="district" autocomplete="address-level3"
+                  required></label>
+              <label class="field">Cidade<input class="input" name="city" autocomplete="address-level2"
+                  required></label>
+              <label class="field full">Complemento<input class="input" name="comp"
+                  autocomplete="address-line2"></label>
+            </div>
+            <h4 style="margin:1.4rem 0 .7rem">Tipo de entrega</h4>
+            <label class="card" style="display:flex;gap:.8rem;padding:1rem;margin-bottom:.5rem;cursor:pointer"><input
+                type="radio" name="ship" value="19.9" checked style="accent-color:var(--primary)">
+              <div><b>Padrão</b> · 3 a 5 dias úteis<br><small style="color:var(--muted)">R$ 19,90 (grátis acima de R$
+                  149)</small></div>
+            </label>
+            <label class="card" style="display:flex;gap:.8rem;padding:1rem;cursor:pointer"><input type="radio"
+                name="ship" value="34.9" style="accent-color:var(--primary)">
+              <div><b><i class="fa-bolt fa-solid" aria-hidden="true"></i> Expressa</b> · em até 24h<br><small
+                  style="color:var(--muted)">R$ 34,90</small></div>
+            </label>
+            <div style="display:flex;gap:.6rem;margin-top:1.4rem"><button type="button" class="btn" data-prev><i
+                  class="fa-arrow-left fa-solid"></i> Voltar</button><button type="button" class="btn btn-primary"
+                data-next>Ir para pagamento <i class="fa-arrow-right fa-solid"></i></button></div>
+          </div>
+          <div class="card pane">
+            <h3 style="margin-bottom:1rem">Pagamento</h3>
+            <div class="pay-opts">
+              <div class="pay-opt" data-pay="pix" role="button" tabindex="0" aria-pressed="false"><i
+                  class="fa-brands fa-pix"></i>PIX <small style="color:var(--primary);display:block">5% off</small>
+              </div>
+              <div class="pay-opt" data-pay="card" role="button" tabindex="0" aria-pressed="false"><i
+                  class="fa-credit-card fa-solid"></i>Cartão<small style="color:var(--muted);display:block">até
+                  6x</small></div>
+              <div class="pay-opt" data-pay="boleto" role="button" tabindex="0" aria-pressed="false"><i
+                  class="fa-barcode fa-solid"></i>Boleto<small style="color:var(--muted);display:block">1 dia
+                  útil</small></div>
+            </div>
+            <div data-paypane="pix" class="payment-info" style="margin-top:1.4rem">
+              <div class="payment-info-icon"><i class="fa-brands fa-pix" aria-hidden="true"></i></div>
+              <div><b>Pagamento via PIX</b>
+                <p>Após confirmar o pedido, você será direcionado ao ambiente seguro de pagamento para gerar o QR Code
+                  ou código PIX. O desconto de 5% será aplicado automaticamente.</p>
+              </div>
+            </div>
+            <div data-paypane="card" class="payment-info" style="margin-top:1.4rem;display:none">
+              <div class="payment-info-icon"><i class="fa-solid fa-credit-card" aria-hidden="true"></i></div>
+              <div><b>Cartão de crédito</b>
+                <p>Informe os dados do cartão na página segura de pagamento após confirmar o pedido. Você poderá
+                  selecionar as opções de parcelamento disponíveis. A PetLove não recebe nem armazena os dados do seu
+                  cartão.</p>
+              </div>
+            </div>
+            <div data-paypane="boleto" class="payment-info" style="margin-top:1.4rem;display:none">
+              <div class="payment-info-icon"><i class="fa-solid fa-barcode" aria-hidden="true"></i></div>
+              <div><b>Pagamento via boleto</b>
+                <p>Após confirmar o pedido, o boleto será gerado no ambiente seguro de pagamento. O pedido será
+                  processado após a confirmação da compensação.</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:.6rem;margin-top:1.4rem;flex-wrap:wrap"><button type="button" class="btn"
+                data-prev><i class="fa-arrow-left fa-solid"></i> Voltar</button><button type="button"
+                class="btn btn-primary" id="finish"><i class="fa-brands fa-mercado-pago" aria-hidden="true"></i> Pagar
+                com Mercado Pago</button></div>
+            <div class="payment-security-note"><i class="fa-solid fa-circle-exclamation"
+                aria-hidden="true"></i><span><strong>atenção: ao continuar, você será direcionado ao ambiente seguro do
+                  mercado pago para concluir o pagamento.</strong><small>a petlove não armazena os dados do seu
+                  cartão.</small></span></div>
+          </div>
+        </form>
+      </div>
+      <aside class="card summary" id="co-side">
+        <h3 style="margin-bottom:.6rem">Seu pedido</h3>
+        <div id="co-items"></div>
+        <div style="margin-top:1rem" id="co-sum"></div>
+        <form id="coupon-form" class="inline-form" style="margin-top:1rem"><input class="input"
+            placeholder="Cupom"><button class="btn">OK</button></form>
+        <div id="coupon-msg" style="margin-top:.5rem;font-size:.85rem"></div>
+      </aside>
+    </div>
+  </main>
+  <script>document.addEventListener("DOMContentLoaded", () => setTimeout(() => { if (typeof bindCoupon === "function" && document.querySelector("#co-sum")) bindCoupon(() => { document.querySelector("#co-sum").innerHTML = sumRows(Cart.totals()) }) }, 0))</script>
+</body>
+
+</html>

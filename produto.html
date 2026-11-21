@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Produto | PetLove</title>
+    <meta name="description" content="Detalhes, especificações e avaliações do produto PetLove.">
+    <meta property="og:title" content="Produto | PetLove">
+    <meta property="og:description" content="Detalhes, especificações e avaliações do produto PetLove.">
+    <meta name="theme-color" content="#070b14">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/app.js"></script>
+    <script defer src="js/backend.js"></script>
+</head>
+
+<body data-page="produto">
+    <!-- conteúdo principal: produto -->
+    <main>
+        <div class="container">
+            <div class="crumbs" style="padding-top:2rem"><a href="index.html">início</a> / <a
+                    href="produtos.html">loja</a> / <span id="crumb"></span></div>
+            <div class="pd">
+                <div class="pd-img reveal"><img id="pd-img" src="" alt="">
+                    <div class="scan"></div>
+                </div>
+                <div id="pd-info"></div>
+            </div>
+            <div class="tabs"><button class="active" data-t="tab-desc">Descrição</button><button
+                    data-t="tab-spec">Especificações</button><button data-t="tab-rev">Avaliações</button></div>
+            <div class="tab-pane" id="tab-desc"></div>
+            <div class="tab-pane" id="tab-spec" style="display:none"></div>
+            <div class="tab-pane" id="tab-rev" style="display:none"></div>
+            <!-- seção 01: você também vai gostar -->
+            <section class="section">
+                <div class="section-head">
+                    <div><span class="eyebrow">VOCÊ TAMBÉM VAI GOSTAR</span>
+                        <h2>Combina com <span class="grad-text">esse item</span></h2>
+                    </div>
+                </div>
+                <div class="g4 grid" id="related"></div>
+            </section>
+        </div>
+    </main>
+</body>
+
+</html>

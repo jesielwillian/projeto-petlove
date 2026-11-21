@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Loja | PetLove — produtos para cães e gatos</title>
+    <meta name="description"
+        content="Catálogo completo com filtros por categoria, espécie e preço. 5% off no PIX e frete grátis acima de R$ 149.">
+    <meta property="og:title" content="Loja | PetLove — produtos para cães e gatos">
+    <meta property="og:description"
+        content="Catálogo completo com filtros por categoria, espécie e preço. 5% off no PIX e frete grátis acima de R$ 149.">
+    <meta name="theme-color" content="#070b14">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/app.js"></script>
+    <script defer src="js/backend.js"></script>
+</head>
+
+<body data-page="produtos">
+    <!-- conteúdo principal: produtos -->
+    <main>
+        <div class="page-head">
+            <div class="container">
+                <div class="crumbs"><a href="index.html">início</a> / loja</div><span class="eyebrow">CATÁLOGO</span>
+                <h1>A loja <span class="grad-text">inteira</span></h1>
+            </div>
+        </div>
+        <!-- seção 01: seção -->
+        <section class="section" style="padding-top:40px">
+            <div class="container shop">
+                <aside class="card filters">
+                    <label class="field">Buscar<input class="input" id="q" placeholder="Nome do produto"></label>
+                    <h4>Categoria</h4>
+                    <div id="cat-chips"></div>
+                    <h4>Espécie</h4>
+                    <div id="pet-chips"><span class="active chip" data-p="all">Todos</span><span class="chip"
+                            data-p="cao"><i class="fa-dog fa-solid" aria-hidden="true"></i> Cão</span><span class="chip"
+                            data-p="gato"><i class="fa-cat fa-solid" aria-hidden="true"></i> Gato</span></div>
+                    <h4>Preço máximo · <span id="max-l" class="mono" style="color:var(--primary)">R$ 200,00</span></h4>
+                    <input type="range" id="max" min="20" max="200" value="200" step="5">
+                    <h4>Outros</h4><label style="display:flex;gap:.5rem;align-items:center;color:var(--muted)"><input
+                            type="checkbox" id="fav-only" style="accent-color:var(--primary)"> Só favoritos</label>
+                </aside>
+                <div>
+                    <div class="toolbar"><span class="mono" id="count" style="color:var(--muted)"></span>
+                        <div class="sort-select" id="sortSelect">
+                            <button class="sort-trigger" id="sortTrigger" type="button" aria-haspopup="listbox"
+                                aria-expanded="false"><span id="sortLabel">Relevância</span><i
+                                    class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+                            <div class="sort-menu" id="sortMenu" role="listbox" aria-label="Ordenar produtos" hidden>
+                                <button type="button" role="option" data-sort="rel"
+                                    aria-selected="true">Relevância</button>
+                                <button type="button" role="option" data-sort="pop" aria-selected="false">Mais
+                                    vendidos</button>
+                                <button type="button" role="option" data-sort="rating" aria-selected="false">Melhor
+                                    avaliados</button>
+                                <button type="button" role="option" data-sort="low" aria-selected="false">Menor
+                                    preço</button>
+                                <button type="button" role="option" data-sort="high" aria-selected="false">Maior
+                                    preço</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="g3 grid" id="grid"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

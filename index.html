@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>PetLove — Pet shop tech: produtos, serviços e entrega 24h</title>
+    <meta name="description"
+        content="Pet shop com tecnologia: produtos selecionados, assistente inteligente, banho e tosa com agendamento online e entrega em 24h.">
+    <meta property="og:title" content="PetLove — Pet shop tech: produtos, serviços e entrega 24h">
+    <meta property="og:description"
+        content="Pet shop com tecnologia: produtos selecionados, assistente inteligente, banho e tosa com agendamento online e entrega em 24h.">
+    <meta name="theme-color" content="#070b14">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/app.js"></script>
+    <script defer src="js/backend.js"></script>
+</head>
+
+<body data-page="index">
+    <!-- conteúdo principal: index -->
+    <main>
+        <!-- seção 01: pet shop 30  entrega em 24h -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="reveal"><span class="eyebrow">PET SHOP 3.0 · ENTREGA EM 24H</span>
+                    <h1>Tecnologia que cuida de <span class="grad-text">quem você ama.</span></h1>
+                    <p class="lead">Produtos testados por especialistas, recomendações inteligentes para o seu pet e
+                        serviços agendados em segundos. Tudo num só lugar.</p>
+                    <div class="hero-ctas"><a href="produtos.html" class="btn btn-primary">Explorar a loja <i
+                                class="fa-arrow-right fa-solid"></i></a><a href="#quiz-sec" class="btn"><i
+                                class="fa-solid fa-wand-magic-sparkles"></i> Recomendação para meu pet</a></div>
+                    <div class="hero-stats">
+                        <div><strong data-count="48000" data-suffix="+">0</strong><span>pets atendidos</span></div>
+                        <div><strong data-count="98" data-suffix="%">0</strong><span>satisfação</span></div>
+                        <div><strong>4.9★</strong><span>avaliação média</span></div>
+                    </div>
+                </div>
+                <div class="hero-visual reveal"><img src="assets/images/hero-pet.webp" alt="Pet feliz">
+                </div>
+            </div>
+        </section>
+        <div class="marquee">
+            <div class="marquee-track"><span>FRETE GRÁTIS ACIMA DE R$149</span><span>5% OFF NO PIX</span><span>3X SEM
+                    JUROS</span><span>ENTREGA EXPRESSA 24H</span><span>TROCA GRÁTIS EM 30 DIAS</span><span>VETERINÁRIOS
+                    PARCEIROS</span><span>FRETE GRÁTIS ACIMA DE R$149</span><span>5% OFF NO PIX</span><span>3X SEM
+                    JUROS</span><span>ENTREGA EXPRESSA 24H</span><span>TROCA GRÁTIS EM 30 DIAS</span><span>VETERINÁRIOS
+                    PARCEIROS</span></div>
+        </div>
+        <!-- seção 02: categorias -->
+        <section class="section">
+            <div class="container">
+                <div class="section-head">
+                    <div><span class="eyebrow">CATEGORIAS</span>
+                        <h2>Navegue por <span class="grad-text">necessidade</span></h2>
+                    </div>
+                </div>
+                <div class="g4 grid keep2">
+                    <a class="card cat reveal" href="produtos.html?cat=caes"><i class="fa-dog fa-solid"></i>
+                        <h3>Cães</h3><small>CAMAS · COLEIRAS</small>
+                    </a>
+                    <a class="card cat reveal" href="produtos.html?cat=gatos"><i class="fa-cat fa-solid"></i>
+                        <h3>Gatos</h3><small>ARRANHADORES · BOLSAS</small>
+                    </a>
+                    <a class="card cat reveal" href="produtos.html?cat=brinquedos"><i class="fa-baseball fa-solid"></i>
+                        <h3>Brinquedos</h3><small>CORDAS · BOLINHAS</small>
+                    </a>
+                    <a class="card cat reveal" href="produtos.html?cat=cuidados"><i class="fa-pump-soap fa-solid"></i>
+                        <h3>Cuidados</h3><small>BANHO · HIGIENE</small>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- seção 03: destaques -->
+        <section class="section" style="padding-top:0">
+            <div class="container">
+                <div class="section-head">
+                    <div><span class="eyebrow">DESTAQUES</span>
+                        <h2>Os favoritos da <span class="grad-text">comunidade</span></h2>
+                    </div><a href="produtos.html" class="btn">Ver todos <i class="fa-arrow-right fa-solid"></i></a>
+                </div>
+                <div class="g4 grid" id="featured"></div>
+            </div>
+        </section>
+        <!-- seção 04: ofertas relâmpago -->
+        <section class="section" style="background:var(--bg-2);border-block:1px solid var(--line)">
+            <div class="container">
+                <div class="section-head">
+                    <div><span class="eyebrow">OFERTAS RELÂMPAGO</span>
+                        <h2>Acabam <span class="grad-text">hoje à meia-noite</span></h2>
+                    </div>
+                    <div class="countdown" id="cd"></div>
+                </div>
+                <div class="g4 grid" id="deals"></div>
+            </div>
+        </section>
+        <!-- seção 05: petmatch  ia -->
+        <section class="section" id="quiz-sec">
+            <div class="container g2 grid" style="align-items:center;gap:3rem">
+                <div class="reveal"><span class="eyebrow">PETMATCH · IA</span>
+                    <h2>Descubra o kit ideal em <span class="grad-text">10 segundos</span></h2>
+                    <p style="color:var(--muted);margin-top:1rem">Responda duas perguntas e nosso algoritmo cruza o
+                        perfil do seu pet com milhares de avaliações para sugerir os produtos certos.</p>
+                    <ul style="list-style:none;margin-top:1.4rem;display:grid;gap:.6rem;color:var(--muted)">
+                        <li><i class="fa-check fa-solid" style="color:var(--primary)"></i> Sugestões por espécie e
+                            rotina</li>
+                        <li><i class="fa-check fa-solid" style="color:var(--primary)"></i> Adicione ao carrinho num
+                            clique</li>
+                        <li><i class="fa-check fa-solid" style="color:var(--primary)"></i> Sem cadastro</li>
+                    </ul>
+                </div>
+                <div class="card reveal" id="quiz" style="min-height:300px"></div>
+            </div>
+        </section>
+        <!-- seção 06: por que a petlove -->
+        <section class="section" style="padding-top:0">
+            <div class="container">
+                <div class="section-head">
+                    <div><span class="eyebrow">POR QUE A PETLOVE</span>
+                        <h2>Um pet shop pensado como <span class="grad-text">produto digital</span></h2>
+                    </div>
+                </div>
+                <div class="g3 grid">
+                    <div class="card reveal">
+                        <div class="feat-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                        <h3>Entrega em 24h</h3>
+                        <p>Logística própria com rastreio em tempo real do pedido até a sua porta.</p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="feat-icon"><i class="fa-robot fa-solid"></i></div>
+                        <h3>PetBot 24/7</h3>
+                        <p>Assistente virtual que tira dúvidas, indica produtos e mostra cupons ativos.</p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="feat-icon"><i class="fa-calendar-check fa-solid"></i></div>
+                        <h3>Agendamento online</h3>
+                        <p>Banho, tosa e consulta com horários em tempo real e lembrete no WhatsApp.</p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="feat-icon"><i class="fa-flask fa-solid"></i></div>
+                        <h3>Produtos testados</h3>
+                        <p>Cada item passa por testes com pets reais antes de entrar no catálogo.</p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="feat-icon"><i class="fa-repeat fa-solid"></i></div>
+                        <h3>Clube PetLove+</h3>
+                        <p>Assinatura com reposição automática, frete grátis e descontos exclusivos.</p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="feat-icon"><i class="fa-shield-halved fa-solid"></i></div>
+                        <h3>Compra protegida</h3>
+                        <p>Pagamento criptografado, PIX com desconto e troca grátis em 30 dias.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- seção 07: depoimentos -->
+        <section class="section" style="padding-top:0">
+            <div class="container">
+                <div class="section-head">
+                    <div><span class="eyebrow">DEPOIMENTOS</span>
+                        <h2>Tutores <span class="grad-text">aprovam</span></h2>
+                    </div>
+                </div>
+                <div class="g3 grid">
+                    <blockquote class="card quote reveal">
+                        <div class="stars">★★★★★</div>
+                        <p>"Pedi às 10h e às 16h o Bento já estava na caminha nova. Inacreditável."</p>
+                        <footer>Marina & Bento <i class="fa-dog fa-solid" aria-label="cachorro"></i></footer>
+                    </blockquote>
+                    <blockquote class="card quote reveal">
+                        <div class="stars">★★★★★</div>
+                        <p>"O PetMatch acertou em cheio: a Luna largou o sofá pelo arranhador."</p>
+                        <footer>Rafa & Luna <i class="fa-cat fa-solid" aria-label="gato"></i></footer>
+                    </blockquote>
+                    <blockquote class="card quote reveal">
+                        <div class="stars">★★★★★</div>
+                        <p>"Agendei o banho pelo site em 30 segundos e recebi lembrete. Muito prático."</p>
+                        <footer>Carol & Mingau <i class="fa-dog fa-solid" aria-label="cachorro"></i></footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+        <!-- seção 08: newsletter -->
+        <section class="container">
+            <div class="cta-band reveal">
+                <div><span class="eyebrow">NEWSLETTER</span>
+                    <h2 style="margin-top:.6rem">Ganhe <span class="grad-text">R$ 20 off</span> na primeira compra</h2>
+                    <p style="color:var(--muted);margin-top:.6rem">Novidades, dicas de veterinários e ofertas antes de
+                        todo mundo.</p>
+                </div>
+                <form class="inline-form" id="news-form"><input class="input" name="email" autocomplete="email"
+                        type="email" required placeholder="seu@email.com"><button class="btn btn-primary">Quero o
+                        cupom</button></form>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
