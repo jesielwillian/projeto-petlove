@@ -456,6 +456,30 @@ export default async function handler(req, res) {
             query: "select=*&order=date.desc,slot.desc&limit=300",
           })) || [],
       });
+    const bookingMatch = path.match(/^\/admin\/bookings\/(\d+)$/);
+    if (bookingMatch && method === "PATCH") {
+      const input = await body(req);
+      const status = String(input.status || "");
+      if (!["requested", "confirmed", "completed", "cancelled"].includes(status))
+        return fail(res, 400, "Status de agendamento inválido.");
+      const saved = await db("bookings", {
+        method: "PATCH",
+        query: `id=eq.${bookingMatch[1]}&select=*`,
+        data: { status },
+        prefer: "return=representation",
+      });
+      if (!saved?.length) return fail(res, 404, "Agendamento não encontrado.");
+      return json(res, 200, { booking: saved[0] });
+    }
+    if (bookingMatch && method === "DELETE") {
+      const deleted = await db("bookings", {
+        method: "DELETE",
+        query: `id=eq.${bookingMatch[1]}&select=id`,
+        prefer: "return=representation",
+      });
+      if (!deleted?.length) return fail(res, 404, "Agendamento não encontrado.");
+      return json(res, 200, { ok: true });
+    }
     if (path === "/admin/contacts" && method === "GET") {
       const [contacts, subscribers] = await Promise.all([
         db("contacts", { query: "select=*&order=created_at.desc&limit=300" }),
